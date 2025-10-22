@@ -26,17 +26,17 @@ import {
 } from "@mui/icons-material";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import Section1 from "@/components/questionnaire/Section1";
-import Section2 from "@/components/questionnaire/Section2";
-import Section3 from "@/components/questionnaire/Section3";
-import Section4 from "@/components/questionnaire/Section4";
-import Section5 from "@/components/questionnaire/Section5";
-import Section6 from "@/components/questionnaire/Section6";
-import Section7 from "@/components/questionnaire/Section7";
-import Section8 from "@/components/questionnaire/Section8";
-import Section9 from "@/components/questionnaire/Section9";
-import Section10 from "@/components/questionnaire/Section10";
-import Section11 from "@/components/questionnaire/Section11";
+import NewSection1 from "@/components/questionnaire/NewSection1";
+import NewSection2 from "@/components/questionnaire/NewSection2";
+import NewSection3 from "@/components/questionnaire/NewSection3";
+import NewSection4 from "@/components/questionnaire/NewSection4";
+import NewSection5 from "@/components/questionnaire/NewSection5";
+import NewSection6 from "@/components/questionnaire/NewSection6";
+import NewSection7 from "@/components/questionnaire/NewSection7";
+import NewSection8 from "@/components/questionnaire/NewSection8";
+import NewSection9 from "@/components/questionnaire/NewSection9";
+import NewSection10 from "@/components/questionnaire/NewSection10";
+import NewSection11 from "@/components/questionnaire/NewSection11";
 
 const SECTIONS = [
   "Contexto do Negócio",
@@ -53,17 +53,17 @@ const SECTIONS = [
 ];
 
 const SECTION_COMPONENTS = [
-  Section1,
-  Section2,
-  Section3,
-  Section4,
-  Section5,
-  Section6,
-  Section7,
-  Section8,
-  Section9,
-  Section10,
-  Section11,
+  NewSection1,
+  NewSection2,
+  NewSection3,
+  NewSection4,
+  NewSection5,
+  NewSection6,
+  NewSection7,
+  NewSection8,
+  NewSection9,
+  NewSection10,
+  NewSection11,
 ];
 
 export default function Questionnaire() {
