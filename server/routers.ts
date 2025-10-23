@@ -17,6 +17,7 @@ import {
   getAllQuestionnaireResponses,
   getQuestionnaireResponse,
 } from "./db";
+import type { Request, Response } from "express";
 
 // Helper to generate 6-digit OTP
 function generateOtp(): string {
@@ -38,8 +39,8 @@ export const appRouter = router({
     me: publicProcedure.query(opts => opts.ctx.user),
     
     logout: publicProcedure.mutation(({ ctx }) => {
-      const cookieOptions = getSessionCookieOptions(ctx.req);
-      ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
+      const cookieOptions = getSessionCookieOptions(ctx.req as Request);
+      (ctx.res as Response).clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
       return {
         success: true,
       } as const;
@@ -143,8 +144,8 @@ export const appRouter = router({
           }
 
           // Set session cookie (handled by context)
-          const cookieOptions = getSessionCookieOptions(ctx.req);
-          ctx.res.cookie(COOKIE_NAME, user.id, {
+          const cookieOptions = getSessionCookieOptions(ctx.req as Request);
+          (ctx.res as Response).cookie(COOKIE_NAME, user.id, {
             ...cookieOptions,
             maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
           } as any);
@@ -302,4 +303,3 @@ export const appRouter = router({
 });
 
 export type AppRouter = typeof appRouter;
-
