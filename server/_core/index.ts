@@ -31,3 +31,11 @@ app.use(
 if (process.env.NODE_ENV === "development") {
   setupVite(app, server);
 }
+
+// Don't start the server if we're in a serverless environment
+if (!process.env.VERCEL) {
+  const port = process.env.PORT || 3000;
+  server.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}/`);
+  });
+}
