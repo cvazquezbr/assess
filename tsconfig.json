@@ -17,6 +17,7 @@
     "paths": {
       "@/*": ["./client/src/*"],
       "@shared/*": ["./shared/*"]
-    }
+    },
+    "types": ["node"]
   }
 }
