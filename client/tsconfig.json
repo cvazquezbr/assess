@@ -5,6 +5,5 @@
     "jsx": "preserve",
     "types": ["vite/client"]
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
